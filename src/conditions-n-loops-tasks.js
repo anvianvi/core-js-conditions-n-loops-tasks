@@ -386,8 +386,25 @@ function sortByAsc(arr) {
  *  '012345', 3 => '024135' => '043215' => '031425'
  *  'qwerty', 3 => 'qetwry' => 'qtrewy' => 'qrwtey'
  */
-function shuffleChar(/* str, iterations */) {
-  throw new Error('Not implemented');
+function shuffleChar(str, iterations) {
+  const strLength = str.length;
+  let result = str;
+
+  for (let iteration = 0; iteration < iterations; iteration += 1) {
+    let shuffledStr = '';
+
+    for (let i = 0; i < strLength; i += 2) {
+      shuffledStr += result[i];
+    }
+
+    for (let i = 1; i < strLength; i += 2) {
+      shuffledStr += result[i];
+    }
+
+    result = shuffledStr;
+  }
+
+  return `${result}`;
 }
 
 /**
@@ -407,6 +424,7 @@ function shuffleChar(/* str, iterations */) {
  * @param {number} number The source number
  * @returns {number} The nearest larger number, or original number if none exists.
  */
+
 function getNearestBigger(/* number */) {
   throw new Error('Not implemented');
 }
